@@ -877,9 +877,9 @@ Thanks goes to these wonderful people ✨
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/iRhonin>
-            <img src=https://avatars.githubusercontent.com/u/13151232?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Rhonin/>
+            <img src=https://avatars.githubusercontent.com/u/13151232?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Arash Fatahzade/>
             <br />
-            <sub style="font-size:14px"><b>Rhonin</b></sub>
+            <sub style="font-size:14px"><b>Arash Fatahzade</b></sub>
         </a>
     </td>
 </tr>
