@@ -12,28 +12,28 @@
         <meta name="author" content="docker-mailserver (Github Organization)">
       
       
-        <link rel="canonical" href="https://docker-mailserver.github.io/docker-mailserver/edge/config/security/fail2ban/">
+        <link rel="canonical" href="https://docker-mailserver.github.io/docker-mailserver/edge/config/debugging/">
       
       
-        <link rel="prev" href="../ssl/">
+        <link rel="prev" href="../security/rspamd/">
       
       
-        <link rel="next" href="../mail_crypt/">
+        <link rel="next" href="../pop3/">
       
       
-      <link rel="icon" href="../../../assets/logo/favicon-32x32.png">
+      <link rel="icon" href="../../assets/logo/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
     
     
       
-        <title>Security | Fail2Ban - Docker Mailserver</title>
+        <title>Debugging - Docker Mailserver</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/css/customizations.css">
+      <link rel="stylesheet" href="../../assets/css/customizations.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration" class="md-skip">
+        <a href="#preliminary-checks" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docker Mailserver" class="md-header__button md-logo" aria-label="Docker Mailserver" data-md-component="logo">
+    <a href="../.." title="Docker Mailserver" class="md-header__button md-logo" aria-label="Docker Mailserver" data-md-component="logo">
       
-  <img src="../../../assets/logo/dmo-logo-white.min.svg" alt="logo">
+  <img src="../../assets/logo/dmo-logo-white.min.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security | Fail2Ban
+              Debugging
             
           </span>
         </div>
@@ -224,7 +224,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../introduction/" class="md-tabs__link">
+      <a href="../../introduction/" class="md-tabs__link">
         
   
     
@@ -258,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../usage/" class="md-tabs__link">
+      <a href="../../usage/" class="md-tabs__link">
         
   
     
@@ -279,7 +279,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../environment/" class="md-tabs__link">
+        <a href="../environment/" class="md-tabs__link">
           
   
   Configuration
@@ -303,7 +303,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../examples/tutorials/basic-installation/" class="md-tabs__link">
+        <a href="../../examples/tutorials/basic-installation/" class="md-tabs__link">
           
   
   Examples
@@ -322,7 +322,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../faq/" class="md-tabs__link">
+      <a href="../../faq/" class="md-tabs__link">
         
   
     
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../contributing/general/" class="md-tabs__link">
+        <a href="../../contributing/general/" class="md-tabs__link">
           
   
   Contributing
@@ -410,9 +410,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docker Mailserver" class="md-nav__button md-logo" aria-label="Docker Mailserver" data-md-component="logo">
+    <a href="../.." title="Docker Mailserver" class="md-nav__button md-logo" aria-label="Docker Mailserver" data-md-component="logo">
       
-  <img src="../../../assets/logo/dmo-logo-white.min.svg" alt="logo">
+  <img src="../../assets/logo/dmo-logo-white.min.svg" alt="logo">
 
     </a>
     Docker Mailserver
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -457,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../introduction/" class="md-nav__link">
+      <a href="../../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -476,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../usage/" class="md-nav__link">
+      <a href="../../usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/" class="md-nav__link">
+      <a href="../environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-management/" class="md-nav__link">
+      <a href="../user-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practices/dkim_dmarc_spf/" class="md-nav__link">
+      <a href="../best-practices/dkim_dmarc_spf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -627,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practices/autodiscover/" class="md-nav__link">
+      <a href="../best-practices/autodiscover/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,19 +653,19 @@
                 
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
@@ -678,7 +678,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -691,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../understanding-the-ports/" class="md-nav__link">
+      <a href="../security/understanding-the-ports/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -711,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
+      <a href="../security/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,27 +729,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Fail2Ban
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../security/fail2ban/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,79 +740,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dms-defaults" class="md-nav__link">
-    DMS Defaults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-files" class="md-nav__link">
-    Custom Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewing-all-bans" class="md-nav__link">
-    Viewing All Bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-bans" class="md-nav__link">
-    Managing Bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewing-the-log-file" class="md-nav__link">
-    Viewing the Log File
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-inside-a-rootless-container" class="md-nav__link">
-    Running Inside A Rootless Container
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -842,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mail_crypt/" class="md-nav__link">
+      <a href="../security/mail_crypt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -862,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rspamd/" class="md-nav__link">
+      <a href="../security/rspamd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,9 +797,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../debugging/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Debugging
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -899,6 +826,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preliminary-checks" class="md-nav__link">
+    Preliminary Checks
+  </a>
+  
+    <nav class="md-nav" aria-label="Preliminary Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mail-sent-from-dms-does-not-arrive-at-destination" class="md-nav__link">
+    Mail sent from DMS does not arrive at destination
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-for-debugging-dms" class="md-nav__link">
+    Steps for Debugging DMS
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps for Debugging DMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-a-running-container" class="md-nav__link">
+    Debug a running container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    Compatibility
+  </a>
+  
+    <nav class="md-nav" aria-label="Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    System
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -910,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pop3/" class="md-nav__link">
+      <a href="../pop3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup.sh/" class="md-nav__link">
+      <a href="../setup.sh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -986,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/optional-config/" class="md-nav__link">
+      <a href="../advanced/optional-config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/maintenance/update-and-cleanup/" class="md-nav__link">
+      <a href="../advanced/maintenance/update-and-cleanup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1106,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/override-defaults/dovecot/" class="md-nav__link">
+      <a href="../advanced/override-defaults/dovecot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/override-defaults/postfix/" class="md-nav__link">
+      <a href="../advanced/override-defaults/postfix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1146,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/override-defaults/user-patches/" class="md-nav__link">
+      <a href="../advanced/override-defaults/user-patches/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1174,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/auth-ldap/" class="md-nav__link">
+      <a href="../advanced/auth-ldap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1194,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mail-sieve/" class="md-nav__link">
+      <a href="../advanced/mail-sieve/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mail-fetchmail/" class="md-nav__link">
+      <a href="../advanced/mail-fetchmail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1234,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mail-getmail/" class="md-nav__link">
+      <a href="../advanced/mail-getmail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mail-forwarding/relay-hosts/" class="md-nav__link">
+      <a href="../advanced/mail-forwarding/relay-hosts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mail-forwarding/aws-ses/" class="md-nav__link">
+      <a href="../advanced/mail-forwarding/aws-ses/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1338,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/full-text-search/" class="md-nav__link">
+      <a href="../advanced/full-text-search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1358,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/kubernetes/" class="md-nav__link">
+      <a href="../advanced/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1378,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/ipv6/" class="md-nav__link">
+      <a href="../advanced/ipv6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/podman/" class="md-nav__link">
+      <a href="../advanced/podman/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1418,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/dovecot-master-accounts/" class="md-nav__link">
+      <a href="../advanced/dovecot-master-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/basic-installation/" class="md-nav__link">
+      <a href="../../examples/tutorials/basic-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/mailserver-behind-proxy/" class="md-nav__link">
+      <a href="../../examples/tutorials/mailserver-behind-proxy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1565,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/docker-build/" class="md-nav__link">
+      <a href="../../examples/tutorials/docker-build/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1585,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/blog-posts/" class="md-nav__link">
+      <a href="../../examples/tutorials/blog-posts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1649,7 +1661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/use-cases/forward-only-mailserver-with-ldap-authentication/" class="md-nav__link">
+      <a href="../../examples/use-cases/forward-only-mailserver-with-ldap-authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1669,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/use-cases/imap-folders/" class="md-nav__link">
+      <a href="../../examples/use-cases/imap-folders/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1689,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/use-cases/ios-mail-push-support/" class="md-nav__link">
+      <a href="../../examples/use-cases/ios-mail-push-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1779,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/general/" class="md-nav__link">
+      <a href="../../contributing/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1799,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/tests/" class="md-nav__link">
+      <a href="../../contributing/tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1819,7 +1831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/issues-and-pull-requests/" class="md-nav__link">
+      <a href="../../contributing/issues-and-pull-requests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,44 +1917,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
+  <a href="#preliminary-checks" class="md-nav__link">
+    Preliminary Checks
   </a>
   
-    <nav class="md-nav" aria-label="Configuration">
+    <nav class="md-nav" aria-label="Preliminary Checks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dms-defaults" class="md-nav__link">
-    DMS Defaults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-files" class="md-nav__link">
-    Custom Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewing-all-bans" class="md-nav__link">
-    Viewing All Bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-bans" class="md-nav__link">
-    Managing Bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viewing-the-log-file" class="md-nav__link">
-    Viewing the Log File
+  <a href="#mail-sent-from-dms-does-not-arrive-at-destination" class="md-nav__link">
+    Mail sent from DMS does not arrive at destination
   </a>
   
 </li>
@@ -1953,9 +1937,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-inside-a-rootless-container" class="md-nav__link">
-    Running Inside A Rootless Container
+  <a href="#steps-for-debugging-dms" class="md-nav__link">
+    Steps for Debugging DMS
   </a>
+  
+    <nav class="md-nav" aria-label="Steps for Debugging DMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-a-running-container" class="md-nav__link">
+    Debug a running container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    Compatibility
+  </a>
+  
+    <nav class="md-nav" aria-label="Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    System
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1974,7 +1998,7 @@
                   
 
   
-    <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/security/fail2ban.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/debugging.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1983,102 +2007,81 @@
     
       
     
-    <a href="https://github.com/docker-mailserver/docker-mailserver/raw/master/docs/content/config/security/fail2ban.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/docker-mailserver/docker-mailserver/raw/master/docs/content/config/debugging.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>Fail2Ban</h1>
+  <h1>Debugging</h1>
 
-<div class="admonition quote">
-<p class="admonition-title">What is Fail2Ban (F2B)?</p>
-<p>Fail2ban is an intrusion prevention software framework. Written in the Python programming language, it is designed to prevent against brute-force attacks. It is able to run on POSIX systems that have an interface to a packet-control system or firewall installed locally, such as [NFTables] or TCP Wrapper.</p>
-<p><a href="https://en.wikipedia.org/wiki/Fail2ban">Source</a></p>
+<p>This page contains valuable information when it comes to resolving issues you encounter.</p>
+<div class="admonition info">
+<p class="admonition-title">Contributions Welcome!</p>
+<p>Please consider contributing solutions to the <a href="../../faq/">FAQ</a> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 </div>
-<h2 id="configuration"><a class="toclink" href="#configuration">Configuration</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>DMS must be launched with the <code>NET_ADMIN</code> capability in order to be able to install the NFTables rules that actually ban IP addresses. Thus, either include <code>--cap-add=NET_ADMIN</code> in the <code>docker run</code> command, or the equivalent in the <code>compose.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">cap_add</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
-</code></pre></div>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">Running Fail2Ban on Older Kernels</p>
-<p>DMS configures F2B to use NFTables, not IPTables (legacy). We have observed that older systems, for example NAS systems, do not support the modern NFTables rules. You will need to configure F2B to use legacy IPTables again, for example with the <a href="https://github.com/docker-mailserver/docker-mailserver/blob/master/config-examples/fail2ban-jail.cf"><code>fail2ban-jail.cf</code></a>, see the <a href="#custom-files">section on configuration further down below</a>.</p>
-</div>
-<h3 id="dms-defaults"><a class="toclink" href="#dms-defaults">DMS Defaults</a></h3>
-<p>DMS will automatically ban IP addresses of hosts that have generated 6 failed attempts over the course of the last week. The bans themselves last for one week. The Postfix jail is configured to use <code>mode = extra</code> in DMS.</p>
-<h3 id="custom-files"><a class="toclink" href="#custom-files">Custom Files</a></h3>
-<div class="admonition question">
-<p class="admonition-title">What is <a href="../../../faq/#what-about-the-docker-datadmsconfig-directory"><code>docker-data/dms/config/</code></a>?</p>
-</div>
-<p>This following configuration files inside the <code>docker-data/dms/config/</code> volume will be copied inside the container during startup</p>
+<h2 id="preliminary-checks"><a class="toclink" href="#preliminary-checks">Preliminary Checks</a></h2>
+<ul>
+<li>Check that all published DMS ports are actually open and not blocked by your ISP / hosting provider.</li>
+<li>SSL errors are likely the result of a wrong setup on the user side and not caused by DMS itself.</li>
+</ul>
+<h3 id="mail-sent-from-dms-does-not-arrive-at-destination"><a class="toclink" href="#mail-sent-from-dms-does-not-arrive-at-destination">Mail sent from DMS does not arrive at destination</a></h3>
+<p>Some service providers block outbound traffic on port 25. Common hosting providers known to have this issue:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity">Azure</a></li>
+<li><a href="https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/">AWS EC2</a></li>
+<li><a href="https://www.vultr.com/docs/what-ports-are-blocked/">Vultr</a></li>
+</ul>
+<p>These links may advise how the provider can unblock the port through additional services offered, or via a support ticket request.</p>
+<h2 id="steps-for-debugging-dms"><a class="toclink" href="#steps-for-debugging-dms">Steps for Debugging DMS</a></h2>
 <ol>
-<li><code>fail2ban-jail.cf</code> is copied to <code>/etc/fail2ban/jail.d/user-jail.local</code><ul>
-<li>with this file, you can adjust the configuration of individual jails and their defaults</li>
-<li>there is an example provided <a href="https://github.com/docker-mailserver/docker-mailserver/blob/master/config-examples/fail2ban-jail.cf">in our repository on GitHub</a></li>
-</ul>
-</li>
-<li><code>fail2ban-fail2ban.cf</code> is copied to <code>/etc/fail2ban/fail2ban.local</code><ul>
-<li>with this file, you can adjust F2B behavior in general</li>
-<li>there is an example provided <a href="https://github.com/docker-mailserver/docker-mailserver/blob/master/config-examples/fail2ban-fail2ban.cf">in our repository on GitHub</a></li>
-</ul>
-</li>
+<li><strong>Increase log verbosity</strong>: Very helpful for troubleshooting problems during container startup. Set the environment variable <a href="../environment/#log_level"><code>LOG_LEVEL</code></a> to <code>debug</code> or <code>trace</code>.</li>
+<li><strong>Use error logs as a search query</strong>: Try <a href="https://github.com/docker-mailserver/docker-mailserver/issues">finding an <em>existing issue</em></a> or <em>search engine result</em> from any errors in your container log output. Often you'll find answers or more insights. If you still need to open an issue, sharing links from your search may help us assist you. The mail server log can be acquired by running <code>docker log &lt;CONTAINER NAME&gt;</code> (<em>or <code>docker logs -f &lt;CONTAINER NAME&gt;</code> if you want to follow the log</em>).</li>
+<li><strong>Understand the basics of mail servers</strong>: Especially for beginners, make sure you read our <a href="../../introduction/">Introduction</a> and <a href="../../usage/">Usage</a> articles.</li>
+<li><strong>Search the whole FAQ</strong>: Our <a href="../../faq/">FAQ</a> contains answers for common problems. Make sure you go through the list.</li>
+<li><strong>Reduce the scope</strong>: Ensure that you can run a basic setup of DMS first. Then incrementally restore parts of your original configuration until the problem is reproduced again. If you're new to DMS, it is common to find the cause is misunderstanding how to configure a minimal setup.</li>
 </ol>
-<h3 id="viewing-all-bans"><a class="toclink" href="#viewing-all-bans">Viewing All Bans</a></h3>
-<p>When just running</p>
-<div class="highlight"><pre><span></span><code>setup<span class="w"> </span>fail2ban
-</code></pre></div>
-<p>the script will show all banned IP addresses.</p>
-<p>To get a more detailed <code>status</code> view, run</p>
-<div class="highlight"><pre><span></span><code>setup<span class="w"> </span>fail2ban<span class="w"> </span>status
-</code></pre></div>
-<h3 id="managing-bans"><a class="toclink" href="#managing-bans">Managing Bans</a></h3>
-<p>You can manage F2B with the <code>setup</code> script. The usage looks like this:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>&lt;CONTAINER<span class="w"> </span>NAME&gt;<span class="w"> </span>setup<span class="w"> </span>fail2ban<span class="w"> </span><span class="o">[</span>&lt;ban<span class="p">|</span>unban&gt;<span class="w"> </span>&lt;IP&gt;<span class="o">]</span>
-</code></pre></div>
-<h3 id="viewing-the-log-file"><a class="toclink" href="#viewing-the-log-file">Viewing the Log File</a></h3>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>&lt;CONTAINER<span class="w"> </span>NAME&gt;<span class="w"> </span>setup<span class="w"> </span>fail2ban<span class="w"> </span>log
-</code></pre></div>
-<h2 id="running-inside-a-rootless-container"><a class="toclink" href="#running-inside-a-rootless-container">Running Inside A Rootless Container</a></h2>
-<p><a href="https://github.com/rootless-containers/rootlesskit"><code>RootlessKit</code></a> is the <em>fakeroot</em> implementation for supporting <em>rootless mode</em> in Docker and Podman. By default, RootlessKit uses the <a href="https://github.com/rootless-containers/rootlesskit/blob/v0.14.5/docs/port.md#port-drivers"><code>builtin</code> port forwarding driver</a>, which does not propagate source IP addresses.</p>
-<p>It is necessary for F2B to have access to the real source IP addresses in order to correctly identify clients. This is achieved by changing the port forwarding driver to <a href="https://github.com/rootless-containers/slirp4netns"><code>slirp4netns</code></a>, which is slower than the builtin driver but does preserve the real source IPs.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Docker</label><label for="__tabbed_1_2">Podman</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>For <a href="https://docs.docker.com/engine/security/rootless">rootless mode</a> in Docker, create <code>~/.config/systemd/user/docker.service.d/override.conf</code> with the following content:</p>
-<div class="admonition danger inline end">
-<p class="admonition-title">Danger</p>
-<p>This changes the port driver for all rootless containers managed by Docker. Per container configuration is not supported, if you need that consider Podman instead.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="k">[Service]</span>
-<span class="na">Environment</span><span class="o">=</span><span class="s">&quot;DOCKERD_ROOTLESS_ROOTLESSKIT_PORT_DRIVER=slirp4netns&quot;</span>
-</code></pre></div>
-<p>And then restart the daemon:</p>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
-<span class="gp">$ </span>systemctl<span class="w"> </span>--user<span class="w"> </span>restart<span class="w"> </span>docker
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p><a href="https://github.com/containers/podman/blob/v3.4.1/docs/source/markdown/podman-run.1.md#--networkmode---net">Rootless Podman</a> requires adding the value <code>slirp4netns:port_handler=slirp4netns</code> to the <code>--network</code> CLI option, or <code>network_mode</code> setting in your <code>compose.yaml</code>:</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">mailserver</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;slirp4netns:port_handler=slirp4netns&quot;</span>
-<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENABLE_FAIL2BAN=1</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NETWORK_INTERFACE=tap0</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-</div>
-<p>You must also add the ENV <code>NETWORK_INTERFACE=tap0</code>, because Podman uses a <a href="https://github.com/containers/podman/blob/v3.4.1/libpod/networking_slirp4netns.go#L264">hard-coded interface name</a> for <code>slirp4netns</code>. <code>slirp4netns</code> is not compatible with user-defined networks!</p>
-</div>
-</div>
-</div>
+<h3 id="debug-a-running-container"><a class="toclink" href="#debug-a-running-container">Debug a running container</a></h3>
+<p>To get a shell inside the container run: <code>docker exec -it &lt;CONTAINER NAME&gt; bash</code>.</p>
+<p>If you need more flexibility than <code>docker logs</code> offers, within the container <code>/var/log/mail/mail.log</code> and <code>/var/log/supervisor/</code> are the most useful locations to get relevant DMS logs. Use the <code>tail</code> or <code>cat</code> commands to view their contents.</p>
+<p>To install additional software:</p>
+<ol>
+<li><code>apt-get update</code> to update repository metadata.</li>
+<li><code>apt-get install &lt;PACKAGE&gt;</code></li>
+</ol>
+<p>For example a text editor you can use in the terminal: <code>apt-get install nano</code></p>
+<h2 id="compatibility"><a class="toclink" href="#compatibility">Compatibility</a></h2>
+<p>It's possible that the issue you're experiencing is due to a compatibility conflict.</p>
+<p>This could be from outdated software, or running a system that isn't able to provide you newer software and kernels. You may want to verify if you can reproduce the issue on a system that is not affected by these concerns.</p>
+<h3 id="network"><a class="toclink" href="#network">Network</a></h3>
+<ul>
+<li>Misconfigured network connections can cause the client IP address to be proxied through a docker network gateway IP, or a <a href="https://github.com/orgs/docker-mailserver/discussions/3273#discussioncomment-5654603">service that acts on behalf of connecting clients for logins</a> where the connections client IP appears to be only from that service (eg: Container IP) instead. This can relay the wrong information to other services (eg: monitoring like Fail2Ban, SPF verification) causing unexpected failures.</li>
+<li><strong><code>userland-proxy</code>:</strong> Prior to Docker <code>v23</code>, <a href="https://github.com/moby/moby/issues/44721">changing the <code>userland-proxy</code> setting did not reliably remove NAT rules</a>.</li>
+<li><strong>UFW / firewalld:</strong> Some users expect only their firewall frontend to manage the firewall rules, but these will be bypassed when Docker publishes a container port (<em>as there is no integration between the two</em>).</li>
+<li><strong><code>iptables</code> / <code>nftables</code>:</strong><ul>
+<li>Docker <a href="https://github.com/moby/moby/issues/26824">only manages the NAT rules via <code>iptables</code></a>, relying on compatibility shims for supporting the successor <code>nftables</code>. Internally DMS expects <code>nftables</code> support on the host kernel for services like Fail2Ban to function correctly.</li>
+<li><a href="https://unix.stackexchange.com/questions/596493/can-nftables-and-iptables-ip6tables-rules-be-applied-at-the-same-time-if-so-wh/596497#596497">Kernels older than 5.2 may affect management of NAT rules via <code>nftables</code></a>. Other software outside of DMS may also manipulate these rules, such as firewall frontends.</li>
+</ul>
+</li>
+<li><strong>IPv6:</strong><ul>
+<li>Requires <a href="../advanced/ipv6/">additional configuration</a> to prevent or properly support IPv6 connections (eg: Preserving the Client IP).</li>
+<li>Support in 2023 is still considered experimental. You are advised to use at least Docker Engine <code>v23</code> (2023Q1).</li>
+<li>Various networking bug fixes have been addressed since the initial IPv6 support arrived in Docker Engine <code>v20.10.0</code> (2020Q4).</li>
+</ul>
+</li>
+</ul>
+<h3 id="system"><a class="toclink" href="#system">System</a></h3>
+<ul>
+<li><strong>Kernel:</strong> Some systems provide <a href="https://github.com/docker-mailserver/docker-mailserver/pull/2662#issuecomment-1168435970">kernels with modifications (<em>replacing defaults and backporting patches</em>)</a> to support running legacy software or kernels, complicating compatibility. This can be commonly experienced with products like NAS.</li>
+<li><strong>CGroups v2:</strong> Hosts running older kernels (prior to 5.2) and systemd (prior to v244) are not likely to leverage cgroup v2, or have not defaulted to the cgroup v2 <code>unified</code> hierarchy. Not meeting this baseline may influence the behaviour of your DMS container, even with the latest Docker Engine installed.</li>
+<li><strong>Container runtime:</strong> Docker and Podman for example have subtle differences. DMS docs are primarily focused on Docker, but we try to document known issues where relevant.</li>
+<li><strong>Rootless containers:</strong> Introduces additional differences in behaviour or requirements:<ul>
+<li>cgroup v2 is required for supporting rootless containers.</li>
+<li>Differences such as for container networking which may further affect support for IPv6 and preserving the client IP (Remote address). Example with Docker rootless are <a href="https://github.com/moby/moby/issues/45742">binding a port to a specific interface</a> and the choice of <a href="../security/fail2ban/#running-inside-a-rootless-container">port forwarding driver</a>.</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2128,10 +2131,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
       
     
   </body>
